@@ -11,13 +11,15 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 
+import org.eclipse.persistence.config.QueryHints;
+
 @Entity
 @Table
 @NamedQueries(
 	@NamedQuery(name="Person.getPersonsByLastName", query = "SELECT p FROM Person p WHERE p.lastName = :lastName",
 		hints = { 
-				@QueryHint(name="eclipselink.query-results-cache", value="true"),
-				@QueryHint(name="eclipselink.query-results-cache.size", value="500") 
+				@QueryHint(name=QueryHints.QUERY_RESULTS_CACHE, value="true"),
+				@QueryHint(name=QueryHints.QUERY_RESULTS_CACHE_SIZE, value="500") 
 		}))
 public class Person {
 
