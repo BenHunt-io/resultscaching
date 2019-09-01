@@ -1,0 +1,4 @@
+com/benhunt/JAXRSConfiguration.class
+com/benhunt/model/Person.class
+com/benhunt/controller/PersonController.class
+com/benhunt/repository/PersonRepository.class

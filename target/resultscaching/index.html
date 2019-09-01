@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+-->
+<html>
+    <head>
+        <title>Results Caching</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>EclipseLink Results Caching Demo</h1>
+        <section>
+            <h2>Query Database:</h2>
+            <article>
+            	<p><b>Use the following links to run inserts and perform queries on the data to test eclipse link results caching.
+            		Note: Turn query logging on with your data store.</b></p>
+            </article>
+            <article>
+                <h5>GET</h5>
+                <a href="./resources/eclipselink">Ping</a>
+              	<br/>
+                <form action="./resources/eclipselink/getPeopleByLastName" method="GET">
+                  <label for="lastName">Get People by Last Name</label>
+				  <input type="text" name="lastName"/> 
+				  <input type="submit" /> 
+				</form>
+               	<form action="./resources/eclipselink/getPeopleByLastNameCached" method="GET">
+               	  <label for="lastName">Get People by Last Name Cached</label>
+				  <input type="text" name="lastName"/> 
+				  <input type="submit" /> 
+				</form>
+                <br/>
+                <h5>POST</h5>
+                <form method="POST">
+                	<label for="firstName">First Name: </label>
+                	<input type="text" name="firstName" id="firstName" required>
+                	<br/>
+                	<label for="lastName">Last Name: </label>
+                	<input type="text" name="lastName" id="lastName" required>
+                	<br/>
+                	<label for="age">Age: </label>
+                	<input type="text" name="age" id="age" required>
+                	<br/>
+                	<input type="submit" value="Insert User" formaction="https://localhost:8181/resultscaching/resources/eclipselink">
+                </form>
+            </article>
+        </section>
+    </body>
+</html>
