@@ -2,6 +2,7 @@ package com.benhunt.model;
 
 import java.math.BigInteger;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +12,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.Table;
 
+import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.config.QueryHints;
 
 @Entity
+@Cache
+@Cacheable
 @Table
 @NamedQueries(
 	@NamedQuery(name="Person.getPersonsByLastName", query = "SELECT p FROM Person p WHERE p.lastName = :lastName",
