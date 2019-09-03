@@ -27,7 +27,7 @@ public class PersonRepository {
     public List<String> getPersonsByLastNameCached(String lastName){
     	TypedQuery<Person> query = em.createNamedQuery("Person.getPersonsByLastName", Person.class);
     	query.setParameter("lastName", lastName);
-    	return query.getResultList().stream().map(Person::getFirstName).collect(Collectors.toList());
+    	return query.setMaxResults(1).getResultList().stream().map(Person::getFirstName).collect(Collectors.toList());
     }
     
     public void insertPerson(String firstName, String lastName, BigInteger age) {
